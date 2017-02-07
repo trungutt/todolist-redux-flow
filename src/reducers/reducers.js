@@ -1,6 +1,6 @@
 /* @flow */
 
-import actionTypes from '../actions/actionTypes'
+import actionTypes from '../actions/actionTypes';
 
 type TodoItem = {
 	text: string,
@@ -8,32 +8,31 @@ type TodoItem = {
 };
 type TodoItems = Array<TodoItem>;
 
-type TodoAction = AddTodoAction | DeleteTodoAction | EditTodoAction |
-	ToggleTodoAction | CompleteAllAction | ClearCompletedAction;
-
 type AddTodoAction = {
-	type: actionTypes.ADD_TODO,
+	type: typeof actionTypes.ADD_TODO,
 	text: string
 };
 type DeleteTodoAction = {
-	type: actionTypes.DELETE_TODO,
+	type: typeof actionTypes.DELETE_TODO,
 	index: number
 };
 type EditTodoAction = {
-	type: actionTypes.EDIT_TODO,
+	type: typeof actionTypes.EDIT_TODO,
 	index: number,
 	text: string
 };
 type ToggleTodoAction = {
-	type: actionTypes.TOGGLE_TODO,
+	type: typeof actionTypes.TOGGLE_TODO,
 	index: number
 };
 type CompleteAllAction = {
-	type: actionTypes.COMPLETE_ALL
+	type: typeof actionTypes.COMPLETE_ALL
 };
 type ClearCompletedAction = {
-	type: actionTypes.CLEAR_COMPLETED
+	type: typeof actionTypes.CLEAR_COMPLETED
 };
+
+type TodoAction = AddTodoAction | DeleteTodoAction | EditTodoAction | ToggleTodoAction | CompleteAllAction | ClearCompletedAction;
 
 const todosReducer = (todos: TodoItems = [], action: TodoAction): TodoItems => {
 	switch (action.type) {
