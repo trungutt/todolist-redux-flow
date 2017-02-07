@@ -1,7 +1,13 @@
 {
-	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"extends": [
+		"airbnb",
+		"plugin:react/recommended"
+	],
 	"env": {
-		"es6": true
+		"es6": true,
+		"browser": true,
+		"node": true,
+		"mocha": true
 	},
 	"plugins": [
 		"flow-vars",
@@ -14,5 +20,34 @@
 			"experimentalObjectRestSpread": true,
 			"jsx": true
 		}
+	},
+	"rules": {
+		"no-tabs": "off",
+		"indent": [
+			2,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"jsx-a11y/no-marquee": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		],
+		"react/jsx-indent": [
+			2,
+			"tab"
+		],
+		"react/jsx-indent-props": [
+			2,
+			"tab"
+		],
+		"react/no-array-index-key": "off"
 	}
 }

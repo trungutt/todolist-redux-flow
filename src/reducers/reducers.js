@@ -32,21 +32,22 @@ type ClearCompletedAction = {
 	type: typeof actionTypes.CLEAR_COMPLETED
 };
 
-type TodoAction = AddTodoAction | DeleteTodoAction | EditTodoAction | ToggleTodoAction | CompleteAllAction | ClearCompletedAction;
+type TodoAction = AddTodoAction | DeleteTodoAction | EditTodoAction |
+	ToggleTodoAction | CompleteAllAction | ClearCompletedAction;
 
 const todosReducer = (todos: TodoItems = [], action: TodoAction): TodoItems => {
 	switch (action.type) {
 		case actionTypes.ADD_TODO: {
 			return [...todos, {
 				text: action.text,
-				completed: false
+				completed: false,
 			}];
 		}
 
 		case actionTypes.DELETE_TODO: {
 			return todos
 				.splice(0, action.index)
-				.concat(todos.slice(action.index + 1))
+				.concat(todos.slice(action.index + 1));
 		}
 
 		case actionTypes.EDIT_TODO: {
@@ -54,7 +55,7 @@ const todosReducer = (todos: TodoItems = [], action: TodoAction): TodoItems => {
 				...todos.slice(0, action.index),
 				Object.assign({}, todos[action.index], { text: action.text }),
 				...todos.slice(action.index + 1),
-			]
+			];
 		}
 
 		case actionTypes.TOGGLE_TODO: {
@@ -62,15 +63,15 @@ const todosReducer = (todos: TodoItems = [], action: TodoAction): TodoItems => {
 				...todos.slice(0, action.index),
 				Object.assign({}, todos[action.index], { completed: !todos[action.index].completed }),
 				...todos.slice(action.index + 1),
-			]
+			];
 		}
 
 		case actionTypes.COMPLETE_ALL: {
-			return todos.map((todo) => ({ ...todo, completed: true }));
+			return todos.map(todo => ({ ...todo, completed: true }));
 		}
 
 		case actionTypes.CLEAR_COMPLETED: {
-			return todos.filter((todo) => !todo.completed);
+			return todos.filter(todo => !todo.completed);
 		}
 
 		default: {

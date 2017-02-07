@@ -2,12 +2,12 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 import todosReducer from './reducers';
-import actionTypes from '../actions/actionTypes'
+import actionTypes from '../actions/actionTypes';
 
 describe('reducer CRUD', () => {
 	const initialTodos = [
 		{ text: 'First thing', completed: true },
-		{ text: 'Second thing', completed: false }
+		{ text: 'Second thing', completed: false },
 	];
 
 	it('added', () => {
@@ -19,7 +19,7 @@ describe('reducer CRUD', () => {
 		const todos = initialTodos;
 		const updatedTodos = todosReducer(todos, { type: actionTypes.DELETE_TODO, index: 0 });
 		expect(updatedTodos).to.deep.equal([
-			{ text: 'Second thing', completed: false }
+			{ text: 'Second thing', completed: false },
 		]);
 	});
 
@@ -28,7 +28,7 @@ describe('reducer CRUD', () => {
 		const editedTodos = todosReducer(todos, { type: actionTypes.EDIT_TODO, index: 0, text: 'First thing edited' });
 		expect(editedTodos).to.deep.equal([
 			{ text: 'First thing edited', completed: true },
-			{ text: 'Second thing', completed: false }
+			{ text: 'Second thing', completed: false },
 		]);
 	});
 
@@ -37,7 +37,7 @@ describe('reducer CRUD', () => {
 		const modifiedTodos = todosReducer(todos, { type: actionTypes.TOGGLE_TODO, index: 1 });
 		expect(modifiedTodos).to.deep.equal([
 			{ text: 'First thing', completed: true },
-			{ text: 'Second thing', completed: true }
+			{ text: 'Second thing', completed: true },
 		]);
 	});
 
@@ -46,7 +46,7 @@ describe('reducer CRUD', () => {
 		const modifiedTodos = todosReducer(todos, { type: actionTypes.TOGGLE_TODO, index: 0 });
 		expect(modifiedTodos).to.deep.equal([
 			{ text: 'First thing', completed: false },
-			{ text: 'Second thing', completed: false }
+			{ text: 'Second thing', completed: false },
 		]);
 	});
 
@@ -55,7 +55,7 @@ describe('reducer CRUD', () => {
 		const modifiedTodos = todosReducer(todos, { type: actionTypes.COMPLETE_ALL });
 		expect(modifiedTodos).to.deep.equal([
 			{ text: 'First thing', completed: true },
-			{ text: 'Second thing', completed: true }
+			{ text: 'Second thing', completed: true },
 		]);
 	});
 
@@ -63,7 +63,7 @@ describe('reducer CRUD', () => {
 		const todos = initialTodos;
 		const modifiedTodos = todosReducer(todos, { type: actionTypes.CLEAR_COMPLETED });
 		expect(modifiedTodos).to.deep.equal([
-			{ text: 'Second thing', completed: false }
+			{ text: 'Second thing', completed: false },
 		]);
 	});
 });

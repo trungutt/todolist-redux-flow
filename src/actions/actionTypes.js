@@ -7,6 +7,6 @@ const actionTypes = {
 	TOGGLE_TODO: 'TOGGLE_TODO',
 	COMPLETE_ALL: 'COMPLETE_ALL',
 	CLEAR_COMPLETED: 'CLEAR_COMPLETED',
-}
+};
 
 export default actionTypes;

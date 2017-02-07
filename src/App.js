@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 
 import todosReducer from './reducers/reducers';
 import TodoList from './components/TodoList';
-import actionTypes from './actions/actionTypes'
+import actionTypes from './actions/actionTypes';
 
 
 const store = createStore(todosReducer);
@@ -23,5 +23,5 @@ render(
 	<Provider store={store}>
 		<TodoList />
 	</Provider>,
-	appElem
+	appElem,
 );
