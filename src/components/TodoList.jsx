@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Todo from './Todo';
 import actionTypes from '../actions/actionTypes';
+import Todo from './Todo';
 
-
-export const TodoList = ({todos, onTodoClick}) => (
+const TodoList = ({ todos, onTodoClick }) => (
 	<ul>
 		{todos.map((todo, index) =>
 			<Todo
@@ -17,6 +16,16 @@ export const TodoList = ({todos, onTodoClick}) => (
 	</ul>
 );
 
+const mapStateToProp = (state) => ({
+	todos: state
+});
+
+const mapDispatchToProp = (dispatch) => ({
+	onTodoClick: (index) => {
+		dispatch({ type: actionTypes.TOGGLE_TODO, index });
+	}
+});
+
 TodoList.propTypes = {
 	todos: PropTypes.arrayOf(PropTypes.shape({
 		text: PropTypes.string.isRequired,
@@ -25,13 +34,4 @@ TodoList.propTypes = {
 	onTodoClick: PropTypes.func.isRequired
 };
 
-export default connect(
-	(state) => ({
-		todos: state
-	}),
-	(dispatch) => ({
-		onTodoClick: (index) => {
-			dispatch({ type: actionTypes.TOGGLE_TODO, index });
-		}
-	})
-)(TodoList);
+export default connect(mapStateToProp, mapDispatchToProp)(TodoList);
