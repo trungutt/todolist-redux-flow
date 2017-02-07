@@ -14,14 +14,9 @@ store.dispatch({ type: actionTypes.ADD_TODO, text: 'First thing' });
 store.dispatch({ type: actionTypes.ADD_TODO, text: 'Second thing' });
 store.dispatch({ type: actionTypes.TOGGLE_TODO, index: 0 });
 
-const appElem = document.createElement('div');
-appElem.id = 'app';
-
-document.body.appendChild(appElem);
-
 render(
 	<Provider store={store}>
 		<TodoList />
 	</Provider>,
-	appElem,
+	document.getElementById('app'),
 );
