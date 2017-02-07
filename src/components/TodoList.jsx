@@ -1,10 +1,13 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import actionTypes from '../actions/actionTypes';
 import Todo from './Todo';
+import type { TodoItems } from '../reducers/reducers';
 
-const TodoList = ({ todos, onTodoClick }) => (
+type TodoListArgs = { todos: TodoItems, onTodoClick: Function };
+
+const TodoList = ({ todos, onTodoClick }: TodoListArgs): Object => (
 	<ul>
 		{todos.map((todo, index) =>
 			<Todo
@@ -25,13 +28,5 @@ const mapDispatchToProp = dispatch => ({
 		dispatch({ type: actionTypes.TOGGLE_TODO, index });
 	},
 });
-
-TodoList.propTypes = {
-	todos: PropTypes.arrayOf(PropTypes.shape({
-		text: PropTypes.string.isRequired,
-		completed: PropTypes.bool.isRequired,
-	}).isRequired).isRequired,
-	onTodoClick: PropTypes.func.isRequired,
-};
 
 export default connect(mapStateToProp, mapDispatchToProp)(TodoList);

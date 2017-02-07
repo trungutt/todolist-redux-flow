@@ -6,7 +6,7 @@ type TodoItem = {
 	text: string,
 	completed: boolean
 };
-type TodoItems = Array<TodoItem>;
+export type TodoItems = Array<TodoItem>;
 
 type AddTodoAction = {
 	type: typeof actionTypes.ADD_TODO,

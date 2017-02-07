@@ -48,6 +48,7 @@
 			2,
 			"tab"
 		],
-		"react/no-array-index-key": "off"
+		"react/no-array-index-key": "off",
+		"jsx-a11y/no-static-element-interactions": "off"
 	}
 }
