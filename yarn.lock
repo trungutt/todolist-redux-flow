@@ -95,6 +95,16 @@ babel-core@^6.22.0, babel-core@^6.22.1:
     slash "^1.0.0"
     source-map "^0.5.0"
 
+babel-eslint@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.1.1.tgz#8a6a884f085aa7060af69cfc77341c2f99370fb2"
+  dependencies:
+    babel-code-frame "^6.16.0"
+    babel-traverse "^6.15.0"
+    babel-types "^6.15.0"
+    babylon "^6.13.0"
+    lodash.pickby "^4.6.0"
+
 babel-generator@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-generator/-/babel-generator-6.22.0.tgz#d642bf4961911a8adc7c692b0c9297f325cda805"
@@ -227,6 +237,10 @@ babel-plugin-syntax-async-functions@^6.8.0:
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
+babel-plugin-syntax-flow@^6.18.0:
+  version "6.18.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
 
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
@@ -420,6 +434,13 @@ babel-plugin-transform-exponentiation-operator@^6.22.0:
     babel-plugin-syntax-exponentiation-operator "^6.8.0"
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-flow-strip-types@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz#84cb672935d43714fdc32bce84568d87441cf7cf"
+  dependencies:
+    babel-plugin-syntax-flow "^6.18.0"
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-object-rest-spread@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.22.0.tgz#1d419b55e68d2e4f64a5ff3373bd67d73c8e83bc"
@@ -519,7 +540,7 @@ babel-template@^6.22.0:
     babylon "^6.11.0"
     lodash "^4.2.0"
 
-babel-traverse@^6.22.0, babel-traverse@^6.22.1:
+babel-traverse@^6.15.0, babel-traverse@^6.22.0, babel-traverse@^6.22.1:
   version "6.22.1"
   resolved "https://registry.yarnpkg.com/babel-traverse/-/babel-traverse-6.22.1.tgz#3b95cd6b7427d6f1f757704908f2fc9748a5f59f"
   dependencies:
@@ -533,7 +554,7 @@ babel-traverse@^6.22.0, babel-traverse@^6.22.1:
     invariant "^2.2.0"
     lodash "^4.2.0"
 
-babel-types@^6.19.0, babel-types@^6.22.0:
+babel-types@^6.15.0, babel-types@^6.19.0, babel-types@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.22.0.tgz#2a447e8d0ea25d2512409e4175479fd78cc8b1db"
   dependencies:
@@ -542,7 +563,7 @@ babel-types@^6.19.0, babel-types@^6.22.0:
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babylon@^6.11.0, babylon@^6.15.0:
+babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.15.0.tgz#ba65cfa1a80e1759b0e89fb562e27dccae70348e"
 
@@ -651,17 +672,11 @@ d@^0.1.1, d@~0.1.1:
   dependencies:
     es5-ext "~0.10.2"
 
-debug@2.2.0:
+debug@2.2.0, debug@^2.1.1, debug@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
-
-debug@^2.1.1, debug@^2.2.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
-  dependencies:
-    ms "0.7.2"
 
 deep-eql@^0.1.3:
   version "0.1.3"
@@ -766,6 +781,14 @@ escope@^3.6.0:
     es6-weak-map "^2.0.1"
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
+
+eslint-plugin-babel@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-4.0.1.tgz#77de74dabd67a6bef3b16bf258f5804e971e7349"
+
+eslint-plugin-flow-vars@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flow-vars/-/eslint-plugin-flow-vars-0.5.0.tgz#a7fb78fd873c86e0e5839df3b3c90d47bc68c6d2"
 
 eslint@^3.15.0:
   version "3.15.0"
@@ -874,6 +897,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+flow-bin@^0.38.0:
+  version "0.38.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.38.0.tgz#3ae096d401c969cc8b5798253fb82381e2d0237a"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -888,20 +915,9 @@ generate-object-property@^1.1.0:
   dependencies:
     is-property "^1.0.0"
 
-glob@7.0.5:
+glob@7.0.5, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.5.tgz#b4202a69099bbb4d292a7c1b95b6682b67ebdc95"
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^3.0.2"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
-
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -1155,6 +1171,10 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.pickby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.pickby/-/lodash.pickby-4.6.0.tgz#7dea21d8c18d7703a27c704c15d3b84a67e33aff"
+
 lodash@^4.0.0, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
@@ -1200,10 +1220,6 @@ mocha@^3.2.0:
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
-
-ms@0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
 mute-stream@0.0.5:
   version "0.0.5"
